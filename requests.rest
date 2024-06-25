@@ -1,0 +1,71 @@
+### Creating a user
+POST ticketing.com/api/users/signup
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "password"
+}
+
+### Connecting with unvalid email
+POST ticketing.com/api/users/signin
+Content-Type: application/json
+
+{
+  "email": "ihsdg",
+  "password": "password"
+}
+
+### Connecting with unvalid password
+POST ticketing.com/api/users/signin
+Content-Type: application/json
+
+{
+  "email": "ihsdg@test.com",
+  "password": ""
+}
+
+### Check currentuser
+GET ticketing.com/api/users/currentuser
+
+### Sign out
+POST ticketing.com/api/users/signout
+Content-Type: application/json
+
+### Test 404
+GET ticketing.com/api/users/soleil
+
+### Create a ticket (publisher)
+POST ticketing.com/api/tickets
+Content-Type: application/json
+
+{
+  "title": "New concert",
+  "price": 500
+}
+
+### Update a ticket (publisher)
+PUT ticketing.com/api/tickets/66770b8730782f9331423606
+Content-Type: application/json
+
+{
+  "title": "Old concert",
+  "price": 500
+}
+
+### Create an order
+POST ticketing.com/api/orders
+Content-Type: application/json
+
+{
+  "ticketId": "6679f1d0d60949c3fd99ae8e"
+}
+
+### Request a payment
+POST ticketing.com/api/payments
+Content-Type: application/json
+
+{
+  "orderId": "6679f1da835d2d5f8e26ebc9",
+  "token": "tok_visa"
+}
